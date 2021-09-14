@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" />
+
+    <style type="text/css">
+        @font-face {
+            font-family: 'Roboto Condensed';
+            font-weight: 400;
+            src: url(./fonts/RobotoCondensed-Light.ttf);
+        }
+
+        @font-face {
+            font-family: 'Roboto Condensed';
+            font-weight: 600;
+            src: url(./fonts/RobotoCondensed-Regular.ttf);
+        }
+
+        #app {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'Roboto';
+        }
+
+        .info_text {
+            font-size: xx-large;
+        }
+
+        .selections_container {
+            display: flex;
+        }
+
+        .selection {
+            padding: 24px;
+            margin: 16px;
+            border: 1px solid #f00;
+            cursor: pointer;
+        }
+
+        .artifacts_container {
+            margin-top: 32px;
+        }
+
+        .end_game_container {
+            padding: 16px;
+            font-size: xxx-large;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .game_over_text {
+            /* margin: 48px; */
+            padding: 24px;
+            /* background-color: #f44336; */
+            color: #f44336;
+            /* border-radius: 8px; */
+        }
+
+        .end_message_text {
+            padding: 16px;
+        }
+
+        .restart_button {
+            margin: 32px;
+            padding: 8px;
+            background-color: #4caf50;
+            color: #fff;
+            border-radius: 8px;
+            font-size: xx-large;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body style="margin:48px; height: 100%;">
+
+    <div id="app" style="height: 100%"></div>
+
+    <script src="./scenes.js"></script>
+    <script src="./renderer.js"></script>
+    <script src="./controller.js"></script>
+
+    <div id="app"></div>
+
+    <script>
+        window.onload = function () {
+
+            renderer_init("app");
+            controller_init();
+        }
+    </script>
+</body>
+
+</html>
