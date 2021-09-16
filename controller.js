@@ -1,11 +1,5 @@
 let controller = {
     scene: scenes.start,
-    artifacts: {
-        dog_bone: {
-            count: 0,
-            text: "Dog bone"
-        }
-    }
 };
 
 function controller_init() {
@@ -20,44 +14,23 @@ function controller_on_selection(action) {
     let end_msg = "";
 
     // What to do?
-    if (action.type === 'goto') {
+    if (action.type === 'move forward') {
 
         console.log("Go to: " + action.target);
 
         // Move to next scene
         controller.scene = scenes[action.target];
-
-        // Any artifacts required to enter this scene?
-        if (controller.scene.requires_artifacts) {
-
-            const artifact_type = controller.scene.requires_artifacts.type;
-            const artifact_count = controller.artifacts[controller.scene.requires_artifacts.type].count;
-
-            console.log("Required artifacts: " + artifact_type);
-            console.log("Available artifacts: " + artifact_count);
-
-            if (artifact_count > 0) {
-                controller.artifacts[controller.scene.requires_artifacts.type].count--;
-            } else {
-                end_reached = true;
-                end_msg = controller.scene.requires_artifacts.failure;
-            }
-        }
     }
     else
-    if (action.type === 'die') {
+    if (action.type === 'bad end') {
         end_reached = true;
         end_msg = action.message;
     }
     else
-    if (action.type === 'end') {
+    if (action.type === 'good end') {
         end_reached = true;
         end_success = true;
         end_msg = action.message;
-    }
-    else
-    if (action.type === 'collect') {
-        controller.artifacts[action.artifact].count += action.count;
     }
 
     if (end_reached) {
@@ -79,5 +52,5 @@ function controller_on_selection(action) {
 }
 
 function controller_render_current() {
-    renderer_render_scene(controller.scene, controller.artifacts, controller_on_selection);
+    renderer_render_scene(controller.scene, controller_on_selection);
 }

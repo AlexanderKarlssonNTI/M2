@@ -6,7 +6,7 @@ function renderer_init(root_div_id) {
     renderer.root_div = document.getElementById(root_div_id);
 }
 
-function renderer_render_scene(scene, artifacts, selection_clicked_func) {
+function renderer_render_scene(scene, selection_clicked_func) {
 
     // Clear previous scene
     while (renderer.root_div.firstChild) {
@@ -18,9 +18,6 @@ function renderer_render_scene(scene, artifacts, selection_clicked_func) {
 
     // Render selections
     const selections_elem = renderer_render_selections(scene.selections, selection_clicked_func);
-
-    // Render artifacts
-    const artifacts_elem = renderer_render_artifacts(artifacts);
 
     // Append to root div
     renderer.root_div.appendChild(info_elem);
@@ -60,19 +57,6 @@ function renderer_render_end(message, was_success, restart_clicked_func) {
     renderer.root_div.appendChild(end_container_elem);
 }
 
-function renderer_render_artifacts(artifacts) {
-
-    const container = renderer_create_div("artifacts_container");
-
-    Object.values(artifacts).forEach(artifact => {
-
-        const artifact_elem = renderer_create_text_div(artifact.text + ": " + artifact.count, "artifact");
-
-        container.appendChild(artifact_elem);
-    });
-
-    return container;
-}
 
 function renderer_render_selections(selections, selection_clicked_func) {
 
