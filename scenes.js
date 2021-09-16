@@ -38,32 +38,51 @@ let scenes = {
                 text: "Don't tell the police",
                 action: {
                     type: "move forward",
-                    target: "kitchen"
+                    target: "Dont_tell"
                 }
             }
         ]
     },
-    kitchen: {
-        info: "You are in the kitchen. What to do?",
+    Dont_tell: {
+        info: "You tell them that you haven’t. The officers look at each other and sigh. They thank you for giving them some of your time and leave. You’ve done it now. Lying to the police is something that can get you in trouble for, so if you stay and they find out you’re screwed. You look at the letter. If you’re going to get in trouble, why not do it on your terms. You grab a backpack and pack it with some food, snacks, water and some clothes. You grab your wallet, keys and letter and put them in your jacket. You also grab an old baton you have, because the streets can be very dangerous. Just before leaving you look at your apartment one last time and say goodbye to it. You then close and lock the door. Now you could take the train then a bus before going the rest on foot, which wouldn’t take that long but you would be more likely to run in with the police. You could go on foot for most if not the entire way which would decrease the chances of running into the police but it would take longer.",
         selections: [
             {
-                text: "Open fridge",
+                text: "Go on foot",
                 action: {
-                    type: "bad end",
-                    message: "A 12 week old cheese smells like someone died..."
+                    type: "move forward",
+                    target: "on_foot1"
                 }
             },
             {
-                text: "Enter the hallway",
+                text: "Take the train",
                 action: {
                     type: "move forward",
-                    target: "hallway"
+                    target: "take_train"
                 }
             }
         ]
     },
-    hallway: {
-        info: "You are in the hallway, which contains 2 standard doors. What to do?",
+    take_train: {
+        info: "You decide to go by train as far as you can go. So you go to the train station, buy yourself a ticket and get on a train. You take out the envelope and look at it wondering what’s inside. When you get off you see police at the exit and they’re body searching everybody coming through. You notice you forgot to put the envelope back. Starting to get nervous you quickly decide to hide it.",
+        selections: [
+            {
+                text: "Hide in jacket",
+                action: {
+                    type: "bad end",
+                    message: "You put the envelope in your jacket pocket. When they start body searching you it seems to be going well until the officer feels the envelope and takes it out. Your heart sinks. They lead you to be questioned. While they say that it won’t take a while, you know you aren’t going to be leaving at all."
+                }
+            },
+            {
+                text: "Hide in backpack",
+                action: {
+                    type: "move forward",
+                    target: "hide_backpack"
+                }
+            },
+        ]
+    },
+    on_foot1: {
+        info: "You are on foot",
         selections: [
             {
                 text: "Open door 1",
@@ -79,6 +98,75 @@ let scenes = {
                     message: "Congratulations, you are in the livingroom and reached the end!"
                 }
             },
+        ]
+    },
+    hide_backpack: {
+        info: "You take off your backpack and put the envelope in it. It’s nerve racking when they search you, but when the officer motions for the next person in line you breathe a sigh of relief. When you exit the train station you notice a bus stop. You wonder to take a bus or go the rest of the way on foot.",
+        selections: [
+            {
+                text: "Take the buss",
+                action: {
+                    type: "move forward",
+                    target: "take_bus"
+                }
+            },
+            {
+                text: "Go on foot",
+                action: {
+                    type: "move forward",
+                    target: "on_foot2"
+                }
+            },
+        ]
+    },
+    take_bus: {
+        info: "You get onto the bus. During the busride the bus stops. The busdriver goes on to check and then announces that the engine stopped working and it would take a few minutes to fix. While they fix the engine you see a few cops in the distance. They look like they're going to search the buss for toublemakers. You could go off now but you will have to go the rest of the way, or you could risk it by staying.",
+        selections: [
+            {
+                text: "Stay",
+                action: {
+                    type: "bad end",
+                    message: "They search you and find the envelope"
+                }
+            },
+            {
+                text: "leave",
+                action: {
+                    type: "move forward",
+                    target: "on_foot2"
+                }
+            },
+        ]
+    },
+    on_foot2: {
+        info: "You decide not to risk it and get off. While you're walking you notice someone calling for help. You wonder wether to help or not.",
+        selections: [
+            {
+                text: "Help",
+                action: {
+                    type: "bad end",
+                    message: "Your little brother just puked in here!"
+                }
+            },
+            {
+                text: "Don't help",
+                action: {
+                    type: "move forward",
+                    target: "move_on"
+                }
+            },
+        ]
+    },
+    move_on: {
+        info: "You decide it's safer to just go.",
+        selections: [
+            {
+                text: "Finally arrive",
+                action: {
+                    type: "good end",
+                    message: "You reached the end"
+                }
+            }
         ]
     }
 };
