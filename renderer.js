@@ -36,7 +36,7 @@ function renderer_render_end(message, was_success, restart_clicked_func) {
     const end_msg_elem = renderer_create_text_div(message, "end_message_text");
 
     // Render Game Over
-    const game_over_elem = renderer_create_text_div("Game Over", "game_over_text");
+    const game_over_elem = renderer_create_text_div("", "game_over_text");
 
     // Render restart button
     const restart_elem = renderer_create_text_div("Restart", "restart_button", () => {
