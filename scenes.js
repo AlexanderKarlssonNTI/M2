@@ -28,19 +28,20 @@ let scenes = {
         info: "You don’t have the time to listen to what some random note attached to a stupid envelope comming from who knows says. And with being a few days of work will likely risk your job, you can’t have that. You lay the letter on a table and just lie on your couch and rest. A few hours later you hear police sirens. You don’t think anything of it, after all you’ve heard it loads of times before; until you hear a knock on your door. You wonder who it is so you hide the letter and walk to the door. There you see two police officers. “Oh crap! Why are they here?” you think. They ask you if you’ve seen/heard of any suspicious activities. You answer that you haven’t. One thing that stands out is that they ask you if you’ve received or seen any strange letters or envelopes recently. You remember the envelope. You look down a bit, as if thinking.",
         selections: [
             {
+                text: "Don't tell the police",
+                action: {
+                    type: "move forward",
+                    target: "Dont_tell"
+                }
+            },
+            {
                 text: "Tell the police",
                 action: {
                     type: "bad end",
                     message: "You tell them about the letter you got today. They both look at you with interest and ask to see it. You go in, take it and give it to them. They thank you for helping and leave. The next day you hear you’re getting promoted. You’re a bit surprised as you weren’t the most qualified for a promotion but you took it. Your life has improved since then, but the world’s beyond saving at this point so you’ll live the best life you’ve ever had until the end of the world."
                 }
             },
-            {
-                text: "Don't tell the police",
-                action: {
-                    type: "move forward",
-                    target: "Dont_tell"
-                }
-            }
+            
         ]
     },
     Dont_tell: {
@@ -78,7 +79,7 @@ let scenes = {
                     type: "move forward",
                     target: "hide_backpack"
                 }
-            },
+            }
         ]
     },
     on_foot1: {
@@ -94,10 +95,10 @@ let scenes = {
             {
                 text: "Open door 2",
                 action: {
-                    type: "good end",
-                    message: "Congratulations, you are in the livingroom and reached the end!"
+                    type: "move forward",
+                   target: "choiceA"
                 }
-            },
+            }
         ]
     },
     hide_backpack: {
@@ -116,7 +117,7 @@ let scenes = {
                     type: "move forward",
                     target: "on_foot2"
                 }
-            },
+            }
         ]
     },
     take_bus: {
@@ -133,21 +134,14 @@ let scenes = {
                 text: "leave",
                 action: {
                     type: "move forward",
-                    target: "on_foot2"
+                    target: "leave"
                 }
-            },
+            }
         ]
     },
-    on_foot2: {
+    leave: {
         info: "You decide not to risk it and get off. While you're walking you notice someone calling for help. You wonder wether to help or not.",
         selections: [
-            {
-                text: "Help",
-                action: {
-                    type: "bad end",
-                    message: "Your little brother just puked in here!"
-                }
-            },
             {
                 text: "Don't help",
                 action: {
@@ -155,6 +149,14 @@ let scenes = {
                     target: "move_on"
                 }
             },
+            {
+                text: "Help",
+                action: {
+                    type: "bad end",
+                    message: "You got robbed and beaten by a group of thugs."
+                }
+            }
+            
         ]
     },
     move_on: {
@@ -165,6 +167,76 @@ let scenes = {
                 action: {
                     type: "good end",
                     message: "You reached the end"
+                }
+            }
+        ]
+    },
+    on_foot2: {
+        info: "You decide to walk instead. You go to rest at an hotel for the night. In the morning when while you're going on your merry way two criminals ambush you. You try to run but they have blocked off all the ways to escpae. You take your baton and prepare to strike.",
+        selections: [
+            {
+                text: "Hit thug B",
+                action: {
+                    type: "move forward",
+                   target: "correct_hit"
+                }
+            },
+            {
+                text: "Hit thug A",
+                action: {
+                    type: "bad end",
+                    message: "Your hits are ineffective towards the thug and they hit you back, knocking you out."
+                }
+            }
+            
+        ]
+    },
+    correct_hit: {
+        info: "Your hit knocked the wind out of them. The other's stunned for a moment. You could possibly escape but you're not sure that you should.",
+        selections: [
+            {
+                text: "Continue fighting",
+                action: {
+                    type: "bad end",
+                    message: "You continue fighting but one of them hit you and you fall on the ground and one of them takes your bag before they beat you to death."
+                }
+            },
+            {
+                text: "Escape",
+                action: {
+                    type: "move forward",
+                   target: "escape"
+                }
+            }
+        ]
+    },
+    escape: {
+        info: "You succesfully escape. After you catch your breath you keep on going the last distance to your destination.",
+        selections: [
+            {
+                text: "Finally arrive",
+                action: {
+                    type: "good end",
+                    message: "You reached the end"
+                }
+            }
+        ]
+    },
+    on_foot1: {
+        info: "Your hit knocked the wind out of them. The other's stunned for a moment. You could possibly escape but you're not sure that you should.",
+        selections: [
+            {
+                text: "Continue fighting",
+                action: {
+                    type: "bad end",
+                    message: "You continue fighting but one of them hit you and you fall on the ground and one of them takes your bag before they beat you to death."
+                }
+            },
+            {
+                text: "Escape",
+                action: {
+                    type: "move forward",
+                   target: "escape"
                 }
             }
         ]
