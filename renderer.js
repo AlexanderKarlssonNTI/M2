@@ -15,7 +15,7 @@ function renderer_render_scene(scene, selection_clicked_func) {
 
     // Render info text
     const info_elem = renderer_create_text_div(scene.info, "info_text");
-    
+
     // Render selections
     const selections_elem = renderer_render_selections(scene.selections, selection_clicked_func);
 
@@ -60,6 +60,10 @@ function renderer_render_end(message, was_success, restart_clicked_func) {
 function renderer_render_selections(selections, selection_clicked_func) {
 
     const container = renderer_create_div("selections_container");
+
+    if(Math.floor(Math.random() * selections.length + 1) > 1) {
+        selections.reverse()
+    }
 
     selections.forEach(selection => {
 
