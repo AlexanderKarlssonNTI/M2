@@ -175,9 +175,9 @@ let scenes = {
         info: "You decide to walk instead. You go to rest at an hotel for the night. In the morning when while you're going on your merry way two criminals ambush you. You try to run but they have blocked off all the ways to escpae. You take your baton and prepare to strike.",
         selections: [
             {
-                text: "Hit thug B",
+                text: "Hit left thug",
                 action: {
-                    type: "move forward",
+                    type: "move right forward",
                     target: "correct_hit"
                 }
             },
@@ -223,7 +223,7 @@ let scenes = {
         ]
     },
     on_foot1: {
-        info: "You decide to walk. A few hours in",
+        info: "You decide to go on foot. A few hours in you find that the streets are filled with people, which makes it harder to navigate.",
         selections: [
             {
                 text: "Choice 1a",
