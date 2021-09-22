@@ -24,7 +24,7 @@ let scenes = {
                 }
             }
         ],
-        backgroundImage: "./img/cat.jpg"
+        backgroundImage: "./img/envelope.jpg"
     },
     Dont_follow: {
         info: "You don’t have the time to listen to what some random note attached to a stupid envelope comming from who knows says. And with being a few days of work will likely risk your job, you can’t have that. You lay the letter on a table and just lie on your couch and rest. A few hours later you hear police sirens. You don’t think anything of it, after all you’ve heard it loads of times before; until you hear a knock on your door. You wonder who it is so you hide the letter and walk to the door. There you see two police officers. “Oh crap! Why are they here?” you think. They ask you if you’ve seen/heard of any suspicious activities. You answer that you haven’t. One thing that stands out is that they ask you if you’ve received or seen any strange letters or envelopes recently. You remember the envelope. You look down a bit, as if thinking.",
@@ -120,7 +120,8 @@ let scenes = {
                     target: "on_foot2"
                 }
             }
-        ]
+        ],
+        backgroundImage: "./img/Train_station.jpg"
     },
     take_bus: {
         info: "You get onto the bus. During the busride the bus stops. The busdriver goes on to check and then announces that the engine stopped working and it would take a few minutes to fix. While they fix the engine you see a few cops in the distance. They look like they're going to search the buss for toublemakers. You could go off now but you will have to go the rest of the way, or you could risk it by staying.",
@@ -139,7 +140,8 @@ let scenes = {
                     target: "leave"
                 }
             }
-        ]
+        ],
+        backgroundImage: "./img/Buss.jpg"
     },
     leave: {
         info: "You decide not to risk it and get off. While you're walking you notice someone calling for help. You wonder wether to help or not.",
@@ -191,7 +193,8 @@ let scenes = {
                 }
             }
 
-        ]
+        ],
+        backgroundImage: "./img/Man_walking.jpg"
     },
     correct_hit: {
         info: "Your hit knocked the wind out of them. The other's stunned for a moment. You could possibly escape but you're not sure that you should.",
