@@ -10,7 +10,8 @@ let scenes = {
                     target: "letter_pickup"
                 }
             }
-        ]
+        ],
+        backgroundImage: "./img/backgroundImage.jpg"
     },
     letter_pickup: {
         info: "The envelope is very small, smaller than any old envelopes, but due to it being thicker it seems like it has alot of contents in it. It's also has a seal over it. There's a note attached which reads “If you want to make a change to the world, go to the address on the back of this note. Be sure to not open it. A reward will be awarded to you if you succeed”. You carefully remove the note and turn it around to see both an address and picture. It’s far away from your home, somewhere in the abandoned parts of town, and it would take some time to get there. But then you’re likely to miss work for a few days, and it’ll likely mean you’ll be fired. You ponder for a moment.",
@@ -22,7 +23,8 @@ let scenes = {
                     target: "Dont_follow"
                 }
             }
-        ]
+        ],
+        backgroundImage: "./img/cat.jpg"
     },
     Dont_follow: {
         info: "You don’t have the time to listen to what some random note attached to a stupid envelope comming from who knows says. And with being a few days of work will likely risk your job, you can’t have that. You lay the letter on a table and just lie on your couch and rest. A few hours later you hear police sirens. You don’t think anything of it, after all you’ve heard it loads of times before; until you hear a knock on your door. You wonder who it is so you hide the letter and walk to the door. There you see two police officers. “Oh crap! Why are they here?” you think. They ask you if you’ve seen/heard of any suspicious activities. You answer that you haven’t. One thing that stands out is that they ask you if you’ve received or seen any strange letters or envelopes recently. You remember the envelope. You look down a bit, as if thinking.",
