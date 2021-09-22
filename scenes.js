@@ -182,7 +182,7 @@ let scenes = {
                 }
             },
             {
-                text: "Hit thug A",
+                text: "Hit right thug",
                 action: {
                     type: "bad end",
                     message: "Your hits are ineffective towards the thug and they hit you back, knocking you out."
