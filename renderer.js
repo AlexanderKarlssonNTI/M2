@@ -18,10 +18,14 @@ function renderer_render_scene(scene, selection_clicked_func) {
 
     // Render selections
     const selections_elem = renderer_render_selections(scene.selections, selection_clicked_func);
+    
+    // Background image
+    const imgUrl = scene.backgroundImage
 
     // Append to root div
     renderer.root_div.appendChild(info_elem);
     renderer.root_div.appendChild(selections_elem);
+    document.body.style.backgroundImage = `url(${imgUrl})`
 }
 
 function renderer_render_end(message, was_success, restart_clicked_func) {
