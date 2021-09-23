@@ -11,7 +11,7 @@ let scenes = {
                 }
             }
         ],
-        backgroundImage: "./img/backgroundImage.jpg"
+        backgroundImage: "./img/cityskape.jpg"
     },
     letter_pickup: {
         info: "The envelope is very small, smaller than any old envelopes, but due to it being thicker it seems like it has alot of contents in it. It's also has a seal over it. There's a note attached which reads “If you want to make a change to the world, go to the address on the back of this note. Be sure to not open it. A reward will be awarded to you if you succeed”. You carefully remove the note and turn it around to see both an address and picture. It’s far away from your home, somewhere in the abandoned parts of town, and it would take some time to get there. But then you’re likely to miss work for a few days, and it’ll likely mean you’ll be fired. You ponder for a moment.",
@@ -44,7 +44,8 @@ let scenes = {
                 }
             },
 
-        ]
+        ],
+        backgroundImage: "./img/police.jpg"
     },
     Dont_tell: {
         info: "You tell them that you haven’t. The officers look at each other and sigh. They thank you for giving them some of your time and leave. You’ve done it now. Lying to the police is something that can get you in trouble for, so if you stay and they find out you’re screwed. You look at the letter. If you’re going to get in trouble, why not do it on your terms. You grab a backpack and pack it with some food, snacks, water and some clothes. You grab your wallet, keys and letter and put them in your jacket. You also grab an old baton you have, because the streets can be very dangerous. Just before leaving you look at your apartment one last time and say goodbye to it. You then close and lock the door. Now you could take the train then a bus before going the rest on foot, which wouldn’t take that long but you would be more likely to run in with the police. You could go on foot for most if not the entire way which would decrease the chances of running into the police but it would take longer.",
@@ -82,7 +83,8 @@ let scenes = {
                     target: "hide_backpack"
                 }
             }
-        ]
+        ],
+        backgroundImage: "./img/Train.jpg"
     },
     on_foot1: {
         info: "You are on foot",
