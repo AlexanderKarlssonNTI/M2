@@ -183,7 +183,7 @@ let scenes = {
             {
                 text: "Hit left thug",
                 action: {
-                    type: "move right forward",
+                    type: "move forward",
                     target: "correct_hit"
                 }
             },
